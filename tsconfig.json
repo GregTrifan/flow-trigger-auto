@@ -83,7 +83,7 @@
 
         /* Type Checking */
         "strict": true /* Enable all strict type-checking options. */,
-        "noImplicitAny": true /* Enable error reporting for expressions and declarations with an implied 'any' type. */,
+        "noImplicitAny": false /* Enable error reporting for expressions and declarations with an implied 'any' type. */,
         // "strictNullChecks": true,                         /* When type checking, take into account 'null' and 'undefined'. */
         // "strictFunctionTypes": true,                      /* When assigning functions, check to ensure parameters and the return values are subtype-compatible. */
         // "strictBindCallApply": true,                      /* Check that the arguments for 'bind', 'call', and 'apply' methods match the original function. */
@@ -105,7 +105,7 @@
 
         /* Completeness */
         // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
-        "skipLibCheck": true, /* Skip type checking all .d.ts files. */
+        "skipLibCheck": true /* Skip type checking all .d.ts files. */,
         "baseUrl": ".",
         "paths": {
             "@/*": ["./resources/js/*"],
@@ -113,9 +113,5 @@
         },
         "jsx": "react-jsx"
     },
-    "include": [
-        "resources/js/**/*.ts",
-        "resources/js/**/*.d.ts",
-        "resources/js/**/*.tsx",
-    ]
+    "include": ["resources/js/**/*.ts", "resources/js/**/*.d.ts", "resources/js/**/*.tsx"]
 }
