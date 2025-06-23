@@ -70,7 +70,7 @@ class FlowSeeder extends Seeder
                 'position_y' => 100,
                 'data' => [
 
-                    'message' => 'Hi {{contact.first_name}}, just following up on your inquiry. Let us know if you have any questions!'
+                    'message' => 'Hi {{name}}, just following up on your inquiry. Let us know if you have any questions!'
                 ],
             ],
             // Standard Welcome Email
@@ -99,7 +99,7 @@ class FlowSeeder extends Seeder
                 'position_x' => 1300,
                 'position_y' => 300,
                 'data' => [
-                    'message' => 'Hi {{contact.first_name}}, just following up on your inquiry. Let us know if you have any questions!'
+                    'message' => 'Hi {{first_name}}, just following up on your inquiry. Let us know if you have any questions!'
                 ],
             ]
         ];
