@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  # MySQL Database
+  mysql:
+    image: mysql:8.0
+    container_name: fla_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: fla_db
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_USER: fla_user
+      MYSQL_PASSWORD: fla_password
+    ports:
+      - '3306:3306'
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./docker/mysql/init:/docker-entrypoint-initdb.d
+    networks:
+      - fla_network
+    command: --default-authentication-plugin=mysql_native_password
+
+  # Mailhog for Email Testing
+  mailhog:
+    image: mailhog/mailhog:latest
+    container_name: fla_mailhog
+    restart: unless-stopped
+    ports:
+      - '1025:1025' # SMTP port
+      - '8025:8025' # Web UI port
+    networks:
+      - fla_network
+
+  # Redis for Queue/Cache
+  redis:
+    image: redis:7-alpine
+    container_name: fla_redis
+    restart: unless-stopped
+    ports:
+      - '6379:6379'
+    volumes:
+      - redis_data:/data
+    networks:
+      - fla_network
+
+volumes:
+  mysql_data:
+    driver: local
+  redis_data:
+    driver: local
+
+networks:
+  fla_network:
+    driver: bridge
