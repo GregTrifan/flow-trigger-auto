@@ -85,7 +85,7 @@ php artisan queue:listen # watches for background jobs
 
 ---
 
-## �� Key App URLs
+## Key App URLs
 
 Here's where you'll find the main features, ready to explore:
 
