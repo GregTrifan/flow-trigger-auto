@@ -1,5 +1,20 @@
 # 🔁 FLA – Flow-Trigger-Auto
 
+## ⚙️ Requirements
+
+- **PHP:** 8.2 or higher
+- **Node.js:** 18.x or higher
+- **Composer** and **npm** installed
+- **Docker** and **docker-compose** (for local services)
+- **On Windows:** PHP may require a [CA certificate bundle](https://curl.se/docs/caextract.html) for secure HTTPS connections (e.g., when using Twilio or other APIs). Download it and configure your `php.ini` as follows:
+    ```
+    curl.cainfo = "C:\\path\\to\\cacert.pem"
+    openssl.cafile = "C:\\path\\to\\cacert.pem"
+    ```
+    This ensures secure HTTPS connections for all APIs.
+
+---
+
 ## 🧩 What is FLA?
 
 **FLA (Flow-Trigger-Auto)** is a full-stack, visual automation builder for communication workflows. Design flows like:
@@ -159,18 +174,3 @@ docker-compose logs -f
 docker-compose down -v
 docker-compose up -d
 ```
-
----
-
-## 💡 Use Cases
-
-- Lead generation forms with automated follow-ups
-- CRM-like communication flows
-- SMS/email drip campaigns
-- Visual demo of marketing automation logic
-
----
-
-## ⚠️ Known Quirks
-
-- **Edge Animation:** All "recently saved" edges animate when there are unsaved changes in the flow editor. (Future: per-edge animation.)
